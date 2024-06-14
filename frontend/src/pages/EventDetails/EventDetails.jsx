@@ -1,15 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import events from '../../components/itTalks/events.json';
 import './EventDetails.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ConfirmationModal from '../../components/Modal/ConfirmationModal';
 import { toast } from 'react-toastify';
-import { useEffect } from 'react';
 
 const EventDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const event = events.find(event => event.id === id);
+  const [event, setEvent] = useState(null);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -18,7 +16,11 @@ const EventDetail = () => {
     if (token) {
       setIsAuthenticated(true);
     }
-  }, []);
+
+    const storedEvents = JSON.parse(localStorage.getItem('events')) || [];
+    const event = storedEvents.find(event => event.id === id);
+    setEvent(event);
+  }, [id]);
 
   if (!event) {
     return <div>Evento no encontrado</div>;
@@ -59,14 +61,14 @@ const EventDetail = () => {
         <h4>Fecha:</h4>
         <p>{event.date}</p>
         <h4>Hora:</h4>
-        <p>{event.time}</p>
+        <p>{event.startTime} - {event.endTime}</p>
         <h4>Organizador(a):</h4>
         <p>{event.organizer}</p>
       </div>
       <button className="attend-button" onClick={handleAttend}>Asistir</button>
       <button className="back-button" onClick={() => navigate(-1)}>Regresar</button>
       
-      <ConfirmationModal show={showConfirmationModal} onClose={() => setShowConfirmationModal(false)} onConfirm={handleConfirm} eventName={event.title} />
+      <ConfirmationModal show={showConfirmationModal} onClose={() => setShowConfirmationModal(false)} onConfirm={handleConfirm} />
     </div>
   );
 };

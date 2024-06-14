@@ -1,52 +1,67 @@
-import { useEffect } from "react";
 import "./AboutUs.css";
 
 const AboutUs = () => {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const teamMember = [
     {
       id: 1,
-      name: "Maria Martinez",
+      name: "Irene Portela",
       role: "UX/UI",
-      image: "/ejemplo2.png",
+      image: "/irenePortela.jpeg",
     },
     {
       id: 2,
-      name: "Ana Fernandez",
+      name: "Marina Castro",
       role: "QA Tester - Scrum master",
-      image: "/ejemplo3.png",
+      image: "/marinaCastro.jpeg",
     },
     {
       id: 3,
-      name: "Robin Perez",
+      name: "Robinson Muñeton",
       role: "FrontEnd",
-      image: "/ejemplo1.png",
+      image: "/robinsonMuñeton.jpeg",
+    },
+    {
+      id: 4,
+      name: "Darwin Moreno",
+      role: "FrontEnd",
+      image: "/darwinMoreno.jpeg",
+    },
+    {
+      id: 5,
+      name: "Joel Rondinel",
+      role: "BackEnd",
+      image: "/joelRondinel.png",
+    },
+    {
+      id: 6,
+      name: "Emanuel Sanchez",
+      role: "BackEnd",
+      image: "/emanuel.jpeg",
+    },
+
+    { 
+      id: 7,
+      name: "Juan Esteban",
+      role: "BackEnd",
+      image: "/juanEsteban.jpeg",
     },
   ];
 
   return (
-      
-      <section className="main-content">
-        <h1 className="about-us">Sobre MultiMeet</h1>
-        <div className="info">
+    <section className="main-content">
+      <h1 className="about-us">Somos MultiMeet</h1>
+      <div className="info">
         <h2>¿Qué es MultiMeet?</h2>
         <p className="info-description">
           MultiMeet es una plataforma que te permite encontrar eventos que se
           adapten a tus gustos y preferencias. Te brindará todas las
           herramientas necesarias del lugar al que vas a asistir.
         </p>
-  </div>
-        <div className="image">
-        <img
-          src="/bannerAboutUs.jpg"
-          alt="Escenario con luces"
-        />
-</div>
-        <div className="missionVision">
+      </div>
+      <div className="image">
+        <img src="/bannerAboutUs.jpg" alt="Escenario con luces" />
+      </div>
+      <div className="missionVision">
         <h3>Misión</h3>
         <p>
           Nuestra misión es facilitar el acceso a eventos culturales y conectar
@@ -59,8 +74,8 @@ const AboutUs = () => {
           organización de eventos, transformando la forma en que las personas se
           conectan con sus pasiones e intereses.
         </p>
-</div>
-        <div className="history">
+      </div>
+      <div className="history">
         <h3>Nuestra Historia</h3>
         <p>
           MultiMeet nace en 2024 con la idea de facilitar el acceso a eventos
@@ -69,8 +84,8 @@ const AboutUs = () => {
           organizar y participar en eventos culturales locales. Nos motivó el
           deseo de crear un espacio donde la cultura y la comunidad se unen.
         </p>
-</div>
-        <div className="team">
+      </div>
+      <div className="team">
         <h3>Nuestro Equipo</h3>
         <p>
           Un grupo apasionado por la tecnología y los eventos, comprometido con
@@ -78,7 +93,7 @@ const AboutUs = () => {
         </p>
         <div className="team-container">
           {teamMember.map((member) => (
-            <div key={member.id} className="team-member">
+            <div key={member.id} className={`team-member ${member.id === 7 ? "seventh-member" : ""}`}>
               <img src={member.image} alt={member.name} />
               <div className="member-info">
                 <h4>{member.name}</h4>
@@ -87,9 +102,8 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-        </div>
-        </section>
-    
+      </div>
+    </section>
   );
 };
 

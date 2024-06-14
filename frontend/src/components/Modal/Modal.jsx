@@ -21,7 +21,7 @@ const Modal = ({ show, onClose, event, onAttend }) => {
     }
   };
 
-  if(!show || !event){
+  if (!show || !event) {
     return null;
   }
 
@@ -31,7 +31,7 @@ const Modal = ({ show, onClose, event, onAttend }) => {
     }
     return description;
   };
-  
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -45,7 +45,7 @@ const Modal = ({ show, onClose, event, onAttend }) => {
             <p>{truncateDescription(event.description, 300)}</p>
             <h4>{event.location}</h4>
             <p><strong>{event.date}</strong></p>
-            <p><strong>{event.time}</strong></p>
+            {event.time && <p><strong>{event.time}</strong></p>}
             <p><strong>{event.organizer}</strong></p>
             <button className="attend-button" onClick={handleViewMore}>Ver más</button>
             <button className="attend-button" onClick={handleAttend}>Asistir</button>
@@ -66,10 +66,10 @@ Modal.propTypes = {
     description: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
+    time: PropTypes.string, // time ya no es requerido
     organizer: PropTypes.string.isRequired,
   }),
   onAttend: PropTypes.func.isRequired,
 };
 
-export default Modal
+export default Modal;

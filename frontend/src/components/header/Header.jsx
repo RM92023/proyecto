@@ -49,7 +49,7 @@ const Header = () => {
         {isAuthenticated ? (
           <>
             <div className="user-info">
-              <span>Hola, {userName}</span>
+              {/* <span>Hola, {userName}</span> */}
               <button onClick={handleLogout} className="logout-button">Cerrar Sesión</button>
             </div>
             {userRole === 'organizer' && (
@@ -57,6 +57,9 @@ const Header = () => {
                 <div className="create-event">Crear Evento</div>
               </Link>
             )}
+            <Link to='/user-profile'>
+              <div className="user-profiles">Mi perfil</div>
+            </Link>
           </>
         ) : (
           <>

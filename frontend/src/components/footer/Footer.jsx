@@ -6,7 +6,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <img src='./logoWhiteOrange.png' alt="Multimeet Logo" className="footer-logo" />
+          <Link to='/'>
+            <img src='./logoWhiteOrange.png' alt="Multimeet Logo" className="footer-logo" />
+          </Link>
         </div>
         <div className="footer-section">
           {/* <h4>MULTIMEET</h4> */}
