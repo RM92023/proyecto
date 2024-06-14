@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types'
-import './Modal.css'
+import PropTypes from 'prop-types';
+import './Modal.css';
 
 const ConfirmationModal = ({ show, onClose, onConfirm }) => {
-
-    if(!show){
-        return null;
-    }
+  if (!show) {
+    return null;
+  }
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -21,13 +20,13 @@ const ConfirmationModal = ({ show, onClose, onConfirm }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 ConfirmationModal.propTypes = {
-    show: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
-    onConfirm: PropTypes.func.isRequired,
-  };
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onConfirm: PropTypes.func.isRequired,
+};
 
-export default ConfirmationModal
+export default ConfirmationModal;

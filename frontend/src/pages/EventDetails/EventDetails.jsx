@@ -37,7 +37,7 @@ const EventDetail = () => {
 
   const handleConfirm = (confirm) => {
     if (confirm) {
-      toast.success(`Asistiendo al evento ${event.title}`,{
+      toast.success(`Asistiendo al evento ${event.title}`, {
         autoClose: 1000,
       });
       navigate('/');
@@ -67,7 +67,7 @@ const EventDetail = () => {
       </div>
       <button className="attend-button" onClick={handleAttend}>Asistir</button>
       <button className="back-button" onClick={() => navigate(-1)}>Regresar</button>
-      
+
       <ConfirmationModal show={showConfirmationModal} onClose={() => setShowConfirmationModal(false)} onConfirm={handleConfirm} />
     </div>
   );

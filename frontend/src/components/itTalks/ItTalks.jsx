@@ -3,12 +3,14 @@ import './ItTalks.css';
 import Modal from '../Modal/Modal';
 import ConfirmationModal from '../Modal/ConfirmationModal';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const ItTalks = () => {
-  const [events, setEvents] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedEvents = JSON.parse(localStorage.getItem('events')) || [];
@@ -45,7 +47,7 @@ const ItTalks = () => {
               <h3>{event.title}</h3>
               <p>{event.location}</p>
               <p>{event.date}</p>
-              <p>{event.time}</p>
+              <p>{event.startTime} - {event.endTime}</p>
               <p>{event.organizer}</p>
               <button className="info-button" onClick={() => handleShowModal(event)}>Vista previa</button>
             </div>

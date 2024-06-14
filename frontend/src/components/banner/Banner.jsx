@@ -4,12 +4,11 @@ import './Banner.css';
 
 const images = [
   // Replace these with the paths to your actual images
-  './test.jpg',
-  './bannerAboutUs.jpg',
-  './test.jpg',
-  './bannerAboutUs.jpg',
-  './test.jpg',
-  './bannerAboutUs.jpg',
+  'images/arteCultura/fotografia.jpeg',
+  'images/conciertoBaile/concierto.jpg',
+  'images/deporteActividadFisica/futbol.jpg',
+  'images/mascotas/mascotas.jpg',
+  'images/tecnologia/tecnologia.jpg',
 ];
 
 const Banner = () => {

@@ -7,42 +7,42 @@ const Blog = () => {
       category: 'La evolución de la inteligencia artificial',
       title: 'La evolución de la Inteligencia Artificial',
       date: '08/04/2023',
-      image: 'bannerAboutUs.jpg'
+      image: 'images/tecnologia/programacion.jpg'
     },
     {
       id: 2,
       category: 'Las mejores prácticas de desarrollo Web en 2024',
       title: 'Las mejores prácticas de desarrollo Web en 2024',
       date: '08/04/2023',
-      image: 'danzaClasica.jpeg'
+      image: 'images/tecnologia/tecnologia.jpg'
     },
     {
       id: 3,
       category: 'Cómo la tecnología está transformando al educación',
       title: 'Cómo la tecnología está transformando la educación',
       date: '08/04/2023',
-      image: 'bannerAboutUs.jpg'
+      image: 'images/tecnologia/usoTecnologia.jpg'
     },
     {
       id: 4,
       category: 'Las mejores prácticas de desarrollo Web en 2024',
       title: 'Las mejores prácticas de desarrollo Web en 2024',
       date: '08/04/2023',
-      image: 'danzaClasica.jpeg'
+      image: 'images/tecnologia/tecnologia.jpg'
     },
     {
       id: 5,
       category: 'Cómo la tecnología está transformando al educación',
       title: 'Cómo la tecnología está transformando la educación',
       date: '08/04/2023',
-      image: 'bannerAboutUs.jpg'
+      image: 'images/tecnologia/usoTecnologia.jpg'
     },
     {
       id: 6,
       category: 'La evolución de la inteligencia artificial',
       title: 'La evolución de la Inteligencia Artificial',
       date: '08/04/2023',
-      image: 'danzaClasica.jpeg'
+      image: 'images/tecnologia/programacion.jpg'
     },
   ];
 
